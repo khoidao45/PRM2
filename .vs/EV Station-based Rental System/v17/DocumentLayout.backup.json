@@ -1,0 +1,427 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\service\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\service\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\service\\iservice\\ijwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\service\\iservice\\ijwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\service\\iservice\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\service\\iservice\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\models\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\models\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\controllers\\authapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\controllers\\authapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\migrations\\20250918145916_identitytables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\migrations\\20250918145916_identitytables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\migrations\\20250918151622_addnametoaspnetusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\migrations\\20250918151622_addnametoaspnetusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\models\\dto\\response\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\models\\dto\\response\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\evstation-basedrentalsystem.services.authapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\evstation-basedrentalsystem.services.authapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\models\\dto\\response\\responsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\models\\dto\\response\\responsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\models\\dto\\request\\registrationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\models\\dto\\request\\registrationrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\models\\dto\\request\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\models\\dto\\request\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\service\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\service\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\evstation-basedrentalsystem.services.authapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\evstation-basedrentalsystem.services.authapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\migrations\\20250918151622_addnametoaspnetusers.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\migrations\\20250918151622_addnametoaspnetusers.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\migrations\\20250918145916_identitytables.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\migrations\\20250918145916_identitytables.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|c:\\users\\minh khoi\\source\\repos\\ev station-based rental system\\evstation-basedrentalsystem.services.couponapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}|EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj|solutionrelative:evstation-basedrentalsystem.services.couponapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:35:06.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthAPIController.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Controllers\\AuthAPIController.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Controllers\\AuthAPIController.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Controllers\\AuthAPIController.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Controllers\\AuthAPIController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwBUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:20:18.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:09:50.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JwtOptions.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\JwtOptions.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\JwtOptions.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\JwtOptions.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\JwtOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:59:41.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Program.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Program.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:39:19.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Service\\IService\\IAuthService.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Service\\IService\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Service\\IService\\IAuthService.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Service\\IService\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T16:05:44.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IJwtTokenGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Service\\IService\\IJwtTokenGenerator.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Service\\IService\\IJwtTokenGenerator.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Service\\IService\\IJwtTokenGenerator.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Service\\IService\\IJwtTokenGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T18:07:39.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Service\\AuthService.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Service\\AuthService.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Service\\AuthService.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Service\\AuthService.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAACMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T16:14:33.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAQwAoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:39:47.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20250918145916_IdentityTables.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918145916_IdentityTables.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918145916_IdentityTables.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918145916_IdentityTables.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918145916_IdentityTables.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAwBYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:59:16.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20250918151622_AddNameToAspNetUsers.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918151622_AddNameToAspNetUsers.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918151622_AddNameToAspNetUsers.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918151622_AddNameToAspNetUsers.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918151622_AddNameToAspNetUsers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:16:22.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Response\\LoginResponseDto.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Response\\LoginResponseDto.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Response\\LoginResponseDto.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Response\\LoginResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:52:55.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\UserDto.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\UserDto.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\UserDto.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:45:58.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\appsettings.json",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-18T13:41:48.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EVStation-basedRentalSystem.Services.AuthAPI.http",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.http",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.http",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.http",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-09-18T13:41:54.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Response\\ResponseDto.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Response\\ResponseDto.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Response\\ResponseDto.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Response\\ResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:32:08.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "RegistrationRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Request\\RegistrationRequestDto.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Request\\RegistrationRequestDto.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Request\\RegistrationRequestDto.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Request\\RegistrationRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T06:08:30.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LoginRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Request\\LoginRequestDto.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Request\\LoginRequestDto.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Request\\LoginRequestDto.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Models\\Dto\\Request\\LoginRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:50:33.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "JwtTokenGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Service\\JwtTokenGenerator.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Service\\JwtTokenGenerator.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Service\\JwtTokenGenerator.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Service\\JwtTokenGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T18:09:11.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20250918151622_AddNameToAspNetUsers.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918151622_AddNameToAspNetUsers.Designer.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918151622_AddNameToAspNetUsers.Designer.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918151622_AddNameToAspNetUsers.Designer.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918151622_AddNameToAspNetUsers.Designer.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAhwAoBAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:42:54.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EVStation-basedRentalSystem.Services.AuthAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\EVStation-basedRentalSystem.Services.AuthAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-18T14:08:27.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20250918145916_IdentityTables.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918145916_IdentityTables.Designer.cs",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918145916_IdentityTables.Designer.cs",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918145916_IdentityTables.Designer.cs",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Migrations\\20250918145916_IdentityTables.Designer.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAQwAsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:42:07.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-18T15:34:08.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "EVStation-basedRentalSystem.Services.CouponAPI\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\MINH KHOI\\source\\repos\\EV Station-based Rental System\\EVStation-basedRentalSystem.Services.CouponAPI\\appsettings.Development.json",
+              "RelativeToolTip": "EVStation-basedRentalSystem.Services.CouponAPI\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-18T13:41:51.415Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

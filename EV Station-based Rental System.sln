@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GateWay", "GateWay", "{FE1D8269-EDFD-4521-B2A5-6F59217F8E40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Intergration", "Intergration", "{D9099E5C-C220-4247-8633-5A71E777E2B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVStation-basedRentalSystem.Services.AuthAPI", "EVStation-basedRentalSystem.Services.CouponAPI\EVStation-basedRentalSystem.Services.AuthAPI.csproj", "{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C2A154B5-B432-4C4E-AEF5-8E11EA3D9C0D} = {2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52AAEAFE-C2BD-46BE-A355-C8342AFA948A}
+	EndGlobalSection
+EndGlobal

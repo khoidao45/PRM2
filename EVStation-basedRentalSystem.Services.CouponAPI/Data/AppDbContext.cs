@@ -10,7 +10,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
-        public DbSet<ApplicationUser> ApplicationUsers {  get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers {  get; set; }        
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

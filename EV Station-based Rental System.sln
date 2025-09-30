@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVStation-basedRentalSysteE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVSation.APIGateway", "EVSation.APIGateway\EVSation.APIGateway.csproj", "{F35B0B68-A851-4132-8123-768097AA50E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVStation-basedRentalSystem.Services.AdminAPI", "EVStation-basedRentalSystem.Service.AdminAPI\EVStation-basedRentalSystem.Services.AdminAPI.csproj", "{5DF1ED27-13B9-4492-8FFE-B29D19CB8572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVStation-basedRentalSystem.Services.IncidentAPI", "EVStation-basedRentalSystem.Services.IncidentAPI\EVStation-basedRentalSystem.Services.IncidentAPI.csproj", "{B40C4F5B-171F-4FC1-AB8D-2D1ADC412DC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,14 @@ Global
 		{F35B0B68-A851-4132-8123-768097AA50E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F35B0B68-A851-4132-8123-768097AA50E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F35B0B68-A851-4132-8123-768097AA50E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF1ED27-13B9-4492-8FFE-B29D19CB8572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF1ED27-13B9-4492-8FFE-B29D19CB8572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF1ED27-13B9-4492-8FFE-B29D19CB8572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF1ED27-13B9-4492-8FFE-B29D19CB8572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B40C4F5B-171F-4FC1-AB8D-2D1ADC412DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40C4F5B-171F-4FC1-AB8D-2D1ADC412DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40C4F5B-171F-4FC1-AB8D-2D1ADC412DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40C4F5B-171F-4FC1-AB8D-2D1ADC412DC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +76,7 @@ Global
 		{C9A398F2-1336-4ACE-851F-49ACB04995F3} = {2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}
 		{79D863FC-64DC-4231-9AA6-DDE2B61D5757} = {2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}
 		{F35B0B68-A851-4132-8123-768097AA50E6} = {2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}
+		{5DF1ED27-13B9-4492-8FFE-B29D19CB8572} = {2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52AAEAFE-C2BD-46BE-A355-C8342AFA948A}

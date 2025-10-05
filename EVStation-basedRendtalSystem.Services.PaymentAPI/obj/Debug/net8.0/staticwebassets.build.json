@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6kCYY/k3wCuq+/QpV6JplKY6pVsbpbQqnqSEh7XdaJk=",
+  "Source": "EVStation-basedRendtalSystem.Services.PaymentAPI",
+  "BasePath": "_content/EVStation-basedRendtalSystem.Services.PaymentAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

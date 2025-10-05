@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVStation-basedRendtalSyste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVStation-basedRendtalSystem.Services.ContractAPI", "EVStation-basedRendtalSystem.Services.ContractAPI\EVStation-basedRendtalSystem.Services.ContractAPI.csproj", "{44695AAA-6BFB-4F32-819E-DC3A9E366762}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVStation-basedRentalSystem.IncidentAPI", "EVStation-basedRentalSystem.IncidentAPI\EVStation-basedRentalSystem.IncidentAPI.csproj", "{1E100E69-F475-4D3C-B109-9BD9A848AAAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{44695AAA-6BFB-4F32-819E-DC3A9E366762}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44695AAA-6BFB-4F32-819E-DC3A9E366762}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44695AAA-6BFB-4F32-819E-DC3A9E366762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E100E69-F475-4D3C-B109-9BD9A848AAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E100E69-F475-4D3C-B109-9BD9A848AAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E100E69-F475-4D3C-B109-9BD9A848AAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E100E69-F475-4D3C-B109-9BD9A848AAAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{D3D03543-5F89-4660-8B39-6D13CD97FEEF} = {2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}
 		{6427971D-9783-4519-BEED-B2B1D61B0C0D} = {2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}
 		{44695AAA-6BFB-4F32-819E-DC3A9E366762} = {2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}
+		{1E100E69-F475-4D3C-B109-9BD9A848AAAE} = {2AE8D88D-EFDA-4668-B50B-F3EFB15CAD48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52AAEAFE-C2BD-46BE-A355-C8342AFA948A}

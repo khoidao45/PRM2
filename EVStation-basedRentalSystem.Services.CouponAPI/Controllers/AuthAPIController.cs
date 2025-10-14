@@ -100,8 +100,9 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Controllers
             return Ok(new { UserId = userId, Email = email });
         }
 
+
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetUserById(string id)
         {
             var user = await _userManagementService.FindByIdAsync(id);
@@ -117,7 +118,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteUser(string id)
         {
             var result = await _userManagementService.DeleteAccountAsync(id);

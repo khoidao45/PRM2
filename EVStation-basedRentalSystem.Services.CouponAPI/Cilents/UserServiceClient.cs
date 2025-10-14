@@ -14,9 +14,10 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Clients
             _httpClient = httpClient;
         }
 
-        public async Task CreateUserAsync(UserDto user)
+        public async Task<bool> CreateUserAsync(UserDto user)
         {
-            await _httpClient.PostAsJsonAsync("api/users/sync", user);
+            var response = await _httpClient.PostAsJsonAsync("/api/user/sync", user);
+            return response.IsSuccessStatusCode;
         }
     }
 }

@@ -45,6 +45,9 @@ namespace EVStation_basedRentalSystem.Services.CarAPI.Models
 
         public DateTime? LastMaintenanceDay { get; set; }
 
+        [MaxLength(255)]
+        public string ImageUrl { get; set; }
+
         [MaxLength(30)]
         public string State { get; set; }    // e.g., "Available", "In Use", "Maintenance"
 

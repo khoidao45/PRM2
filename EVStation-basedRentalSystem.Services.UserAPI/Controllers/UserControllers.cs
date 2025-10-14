@@ -1,96 +1,88 @@
-﻿using EVStation_basedRentalSystem.Services.UserAPI.Clients;
-using EVStation_basedRentalSystem.Services.UserAPI.Data;
-using EVStation_basedRentalSystem.Services.UserAPI.Models;
-using Microsoft.AspNetCore.Authorization;
+﻿using EVStation_basedRentalSystem.Services.UserAPI.Models;
+using EVStation_basedRentalSystem.Services.UserAPI.Models.DTO;
+using EVStation_basedRentalSystem.Services.UserAPI.Services.IService;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EVStation_basedRentalSystem.Services.UserAPI.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    [ApiController]
+    public class UserController : ControllerBase
     {
-        private readonly AuthServiceClient _authService;
-        private readonly UserDbContext _db;
+        private readonly IUserService _userService;
 
-        public UsersController(AuthServiceClient authService, UserDbContext db)
+        public UserController(IUserService userService)
         {
-            _authService = authService;
-            _db = db;
+            _userService = userService;
         }
-
-        // 🔹 Called from AuthAPI to sync user info
         [HttpPost("sync")]
-        [AllowAnonymous] // AuthAPI will call this directly
-        public async Task<IActionResult> SyncUser([FromBody] UserDto dto)
+        public async Task<IActionResult> SyncUser([FromBody] UserDto user)
         {
-            if (dto == null || string.IsNullOrEmpty(dto.ID))
-                return BadRequest("Invalid user data");
-
-            var existing = await _db.Users.FindAsync(dto.ID);
-            if (existing == null)
-            {
-                var newUser = new User
-                {
-                    Id = dto.ID, // 👈 same as Auth user ID
-                    Username = dto.Name ?? dto.Email,
-                    Email = dto.Email,
-                    PhoneNumber = dto.PhoneNumber,
-                    PasswordHash = "FromAuth", // placeholder, no password stored here
-                };
-                _db.Users.Add(newUser);
-            }
-            else
-            {
-                existing.Email = dto.Email;
-                existing.Username = dto.Name ?? dto.Email;
-                existing.PhoneNumber = dto.PhoneNumber;
-                existing.UpdatedAt = DateTime.UtcNow;
-                _db.Users.Update(existing);
-            }
-
-            await _db.SaveChangesAsync();
-            return Ok(new { Message = "User synced successfully", UserId = dto.ID });
+            await _userService.CreateUserAsync(user);
+            return Ok(new { Message = "User synced successfully" });
         }
 
-        // 🔹 Example: Get current user profile
-        [HttpGet("profile")]
-        [Authorize]
-        public IActionResult GetProfile()
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
-            var userId = User.Identity?.Name ?? "Unknown";
-            var roles = User.Claims.Where(c => c.Type == "role").Select(c => c.Value).ToList();
-            return Ok(new { UserId = userId, Roles = roles });
+            var users = await _userService.GetAllAsync();
+            return Ok(users);
         }
 
-        [HttpGet("admin")]
-        [Authorize(Roles = "Admin")]
-        public IActionResult GetAdminData()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(string id)
         {
-            return Ok("This is admin-only data");
+            var user = await _userService.GetByIdAsync(id);
+            if (user == null) return NotFound();
+            return Ok(user);
         }
 
-        [HttpGet("validate")]
-        public async Task<IActionResult> ValidateToken([FromHeader(Name = "Authorization")] string authorization)
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] User user)
         {
-            if (string.IsNullOrEmpty(authorization) || !authorization.StartsWith("Bearer "))
-                return BadRequest("Missing token");
-
-            var token = authorization.Substring("Bearer ".Length);
-            var isValid = await _authService.ValidateTokenAsync(token);
-
-            return Ok(new { TokenValid = isValid });
+            var created = await _userService.CreateAsync(user);
+            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
         }
-    }
 
-    // 🔸 Add this DTO if missing
-    public class UserDto
-    {
-        public string ID { get; set; }
-        public string Email { get; set; }
-        public string Name { get; set; }
-        public string PhoneNumber { get; set; }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(string id, [FromBody] User user)
+        {
+            if (id != user.Id) return BadRequest();
+
+            var updated = await _userService.UpdateAsync(user);
+            if (updated == null) return NotFound();
+
+            return Ok(updated);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var success = await _userService.DeleteAsync(id);
+            if (!success) return NotFound();
+            return NoContent();
+        }
+
+        [HttpGet("me")]
+        public async Task<IActionResult> GetMyself()
+        {
+            var token = Request.Headers["Authorization"].FirstOrDefault();
+            var user = await _userService.GetMyselfAsync(token);
+            if (user == null) return NotFound();
+            return Ok(user);
+        }
+
+        [HttpPost("{id}/upload-profile")]
+        public async Task<IActionResult> UploadProfileImage(string id, [FromBody] ProfileImageDto request)
+        {
+            if (string.IsNullOrEmpty(request.ImageUrl))
+                return BadRequest("Image URL is required.");
+
+            var user = await _userService.UpdateProfileImageUrlAsync(id, request.ImageUrl);
+            if (user == null) return NotFound();
+
+            return Ok(user);
+        }
+
     }
 }

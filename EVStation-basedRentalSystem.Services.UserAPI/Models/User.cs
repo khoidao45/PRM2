@@ -1,31 +1,25 @@
-﻿using System.ComponentModel.DataAnnotations;
-using EVStation_basedRentalSystem.Services.UserAPI.Utils.enums;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace EVStation_basedRentalSystem.Services.UserAPI.Models
 {
     public class User
     {
         [Key]
-        public string Id { get; set; } 
+        public string Id { get; set; } // Matches ApplicationUser.Id
 
-        [Required]
-        [MaxLength(100)]
-        public string Username { get; set; }
-
-        [Required]
-        [EmailAddress]
         public string Email { get; set; }
-
-        [Required]
-        [MaxLength(255)]
-        public string PasswordHash { get; set; }
-
-        [MaxLength(20)]
-        public string PhoneNumber { get; set; }
-
-        public UserStatus Status { get; set; } = UserStatus.Active;
+        public string Username { get; set; }
+        public string? ProfileImageUrl { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
+
+        public bool IsActive { get; set; } = true;
+
+        // Navigation properties
+        public Admin Admin { get; set; }
+        public Renter Renter { get; set; }
+        public Staff Staff { get; set; }
     }
 }

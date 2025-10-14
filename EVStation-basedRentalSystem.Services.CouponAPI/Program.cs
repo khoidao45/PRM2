@@ -72,9 +72,11 @@ builder.Services.AddScoped<IUserManagementService, UserManagementService>();
 builder.Services.AddScoped<IAuthorizeService, AuthorizeService>();
 
 // ✅ Properly register UserServiceClient with base URL
-builder.Services.AddHttpClient<UserServiceClient>(client =>
+builder.Services.AddHttpClient<UserServiceClient>((serviceProvider, client) =>
 {
-    client.BaseAddress = new Uri("https://localhost:7002"); // <-- Change to your UserAPI port
+    var config = serviceProvider.GetRequiredService<IConfiguration>();
+    var baseUrl = config["UserService:BaseUrl"];
+    client.BaseAddress = new Uri(baseUrl);
 });
 
 // ----------------------------

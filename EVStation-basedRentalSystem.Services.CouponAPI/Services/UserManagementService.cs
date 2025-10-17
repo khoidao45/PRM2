@@ -25,21 +25,26 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
             var user = await _userManager.GetUserAsync(principal);
             if (user == null) throw new KeyNotFoundException("User not found.");
 
-            return MapToDto(user);
+            return await MapToDtoAsync(user);
         }
 
         public async Task<List<UserDto>> FindAllAsync()
         {
             var users = await _userManager.Users.ToListAsync();
-            return users.Select(MapToDto).ToList();
+            var result = new List<UserDto>();
+
+            foreach (var user in users)
+                result.Add(await MapToDtoAsync(user));
+
+            return result;
         }
+
 
         public async Task<UserDto> FindByIdAsync(string accountId)
         {
             var user = await _userManager.FindByIdAsync(accountId);
             if (user == null) throw new KeyNotFoundException("User not found.");
-
-            return MapToDto(user);
+            return await MapToDtoAsync(user);
         }
 
         public async Task<UserDto> ActivateAccountAsync(string verificationCode)
@@ -50,7 +55,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
             user.EmailConfirmed = true;
             await _userManager.UpdateAsync(user);
 
-            return MapToDto(user);
+            return await MapToDtoAsync(user);
         }
 
         public async Task<string> DeleteAccountAsync(string accountId)
@@ -66,15 +71,18 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
             return "Account deleted successfully.";
         }
 
-        private static UserDto MapToDto(ApplicationUser user)
+        private async Task<UserDto> MapToDtoAsync(ApplicationUser user)
         {
+            var roles = await _userManager.GetRolesAsync(user);
             return new UserDto
             {
                 ID = user.Id,
                 Email = user.Email,
                 Name = user.Name,
-                PhoneNumber = user.PhoneNumber
+                PhoneNumber = user.PhoneNumber,
+                Role = roles.FirstOrDefault() // or string.Join(", ", roles) if multiple
             };
         }
+
     }
 }

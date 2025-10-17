@@ -1,15 +1,28 @@
+﻿using EVStation_basedRentalSystem.Services.PaymentAPI.Data;
+
+using EVStation_basedRendtalSystem.Services.PaymentAPI.Services.IService;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// 1️⃣ Add DbContext
+builder.Services.AddDbContext<PaymentDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PaymentDbConnection")));
 
+// 2️⃣ HttpClient for Booking API
+builder.Services.AddHttpClient<IBookingService, BookingService>();
+
+// 3️⃣ Register PayOSService as singleton (it handles PayOS internally)
+builder.Services.AddSingleton<PayOSService>();
+
+// 4️⃣ Controllers + Swagger
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// 5️⃣ Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -17,9 +30,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b5sWIbcN/pI=",
+  "dgSpecHash": "uzlpJSJCHNo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\MINH KHOI\\source\\repos\\prm\\EV-RENTAL\\EVStation-basedRentalSysteEM.Services.BookingAPI\\EVStation-basedRentalSysteEM.Services.BookingAPI.csproj",
+  "projectFilePath": "C:\\Users\\MINH KHOI\\source\\repos\\ancomga\\PRM\\EVStation-basedRentalSysteEM.Services.BookingAPI\\EVStation-basedRentalSysteEM.Services.BookingAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -89,7 +89,12 @@
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\MINH KHOI\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.21\\microsoft.windowsdesktop.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.21\\microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.21\\microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.21\\microsoft.netcore.app.host.win-x64.8.0.21.nupkg.sha512"
   ],
   "logs": []
 }

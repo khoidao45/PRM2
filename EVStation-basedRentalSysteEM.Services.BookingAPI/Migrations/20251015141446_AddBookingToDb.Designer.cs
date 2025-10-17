@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EVStation_basedRentalSysteEM.Services.BookingAPI.Migrations
 {
     [DbContext(typeof(BookingDbContext))]
-    [Migration("20251012140231_AddBookingToDb")]
+    [Migration("20251015141446_AddBookingToDb")]
     partial class AddBookingToDb
     {
         /// <inheritdoc />
@@ -64,8 +64,9 @@ namespace EVStation_basedRentalSysteEM.Services.BookingAPI.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

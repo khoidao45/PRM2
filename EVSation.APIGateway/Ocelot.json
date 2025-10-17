@@ -1,16 +1,52 @@
 ﻿{
     "Routes": [
         {
-            "DownstreamPathTemplate": "/api/auth/{everything}",
+            "DownstreamPathTemplate": "/api/car/{everything}",
             "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
-                    "Port": 7001
+                    "Port": 7003
                 }
             ],
-            "UpstreamPathTemplate": "/api/auth/{everything}",
-            "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ]
+            "UpstreamPathTemplate": "/api/car/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/station/{everything}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7004
+                }
+            ],
+            "UpstreamPathTemplate": "/api/station/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/booking/{everything}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7226
+                }
+            ],
+            "UpstreamPathTemplate": "/api/booking/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/payment/{everything}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7188
+                }
+            ],
+            "UpstreamPathTemplate": "/api/payment/{everything}",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
         }
     ],
     "GlobalConfiguration": {

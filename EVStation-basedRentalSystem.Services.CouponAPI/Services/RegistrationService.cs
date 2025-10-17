@@ -70,7 +70,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
                 ID = user.Id, // same ID from Auth
                 Email = user.Email,
                 Name = user.Name,
-                PhoneNumber = user.PhoneNumber
+                PhoneNumber = user.PhoneNumber,
             };
 
             try

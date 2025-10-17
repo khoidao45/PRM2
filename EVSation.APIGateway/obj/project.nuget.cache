@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VoTq6Thboc0=",
+  "dgSpecHash": "Bp7pp1LZlOw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\MINH KHOI\\source\\repos\\prm\\EV-RENTAL\\EVSation.APIGateway\\EVSation.APIGateway.csproj",
+  "projectFilePath": "C:\\Users\\MINH KHOI\\source\\repos\\ancomga\\PRM\\EVSation.APIGateway\\EVSation.APIGateway.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\ipaddressrange\\6.2.0\\ipaddressrange.6.2.0.nupkg.sha512",
@@ -21,7 +21,12 @@
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
     "C:\\Users\\MINH KHOI\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
-    "C:\\Users\\MINH KHOI\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.21\\microsoft.windowsdesktop.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.21\\microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.21\\microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\MINH KHOI\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.21\\microsoft.netcore.app.host.win-x64.8.0.21.nupkg.sha512"
   ],
   "logs": []
 }

@@ -453,11 +453,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MINH KHOI\\source\\repos\\prm\\EV-RENTAL\\EVStation-basedRentalSystem.Services.MailAPI\\EVStation-basedRentalSystem.Services.MailAPI.csproj",
+      "projectUniqueName": "C:\\Users\\MINH KHOI\\source\\repos\\ancomga\\PRM\\EVStation-basedRentalSystem.Services.MailAPI\\EVStation-basedRentalSystem.Services.MailAPI.csproj",
       "projectName": "EVStation-basedRentalSystem.Services.MailAPI",
-      "projectPath": "C:\\Users\\MINH KHOI\\source\\repos\\prm\\EV-RENTAL\\EVStation-basedRentalSystem.Services.MailAPI\\EVStation-basedRentalSystem.Services.MailAPI.csproj",
+      "projectPath": "C:\\Users\\MINH KHOI\\source\\repos\\ancomga\\PRM\\EVStation-basedRentalSystem.Services.MailAPI\\EVStation-basedRentalSystem.Services.MailAPI.csproj",
       "packagesPath": "C:\\Users\\MINH KHOI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MINH KHOI\\source\\repos\\prm\\EV-RENTAL\\EVStation-basedRentalSystem.Services.MailAPI\\obj\\",
+      "outputPath": "C:\\Users\\MINH KHOI\\source\\repos\\ancomga\\PRM\\EVStation-basedRentalSystem.Services.MailAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -489,7 +489,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -511,6 +512,28 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.21, 8.0.21]"
+          },
+          {
+            "name": "Microsoft.Net.Sdk.Compilers.Toolset",
+            "version": "[9.0.306, 9.0.306]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.21, 8.0.21]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.21, 8.0.21]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.21, 8.0.21]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -519,7 +542,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -135,7 +135,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Controllers
         }
 
         [HttpPost("revoke-role")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> RevokeRole([FromBody] AssignRoleRequest request)
         {
             var result = await _authorizeService.RevokeRoleAsync(request);

@@ -49,7 +49,8 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
                 Email = user.Email,
                 ID = user.Id,
                 Name = user.Name,
-                PhoneNumber = user.PhoneNumber
+                PhoneNumber = user.PhoneNumber,
+                Role = roles.FirstOrDefault()
             };
 
             return new LoginResponseDto

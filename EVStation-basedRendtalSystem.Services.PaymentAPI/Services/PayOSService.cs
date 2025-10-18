@@ -11,19 +11,17 @@ public class PayOSService
         _payOS = new PayOS(
             configuration["PayOS:ClientId"] ?? throw new Exception("Missing PAYOS_CLIENT_ID"),
             configuration["PayOS:ApiKey"] ?? throw new Exception("Missing PAYOS_API_KEY"),
-            configuration["PayOS:ChecksumKey"] ?? throw new Exception("Missing PAYOS_CHECKSUM_KEY"),
-            configuration["PayOS:PartnerCode"] ?? string.Empty // optional
+            configuration["PayOS:ChecksumKey"] ?? throw new Exception("Missing PAYOS_CHECKSUM_KEY")
         );
     }
 
-    // Generate payment link, return checkout URL, QR code, orderCode
-    public async Task<(string checkoutUrl, string qrCode, long orderCode)> GeneratePaymentLink(Payment payment)
+    public async Task<(string checkoutUrl, string qrCode, long orderCode)> GeneratePaymentQR(Payment payment)
     {
-        long orderCode = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        long orderCode = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
 
         var items = new List<ItemData>
         {
-            new ItemData("Booking payment", 1, (int)payment.Amount) // cast decimal to int
+            new ItemData("Booking payment", 1, (int)payment.Amount) // cast decimal -> int
         };
 
         var paymentData = new PaymentData(
@@ -35,24 +33,11 @@ public class PayOSService
             "https://localhost:3000/payment-success"
         );
 
-        var result = await _payOS.createPaymentLink(paymentData);
+        CreatePaymentResult result = await _payOS.createPaymentLink(paymentData);
 
         return (result.checkoutUrl, result.qrCode, orderCode);
     }
 
-    // Verify webhook payload and return WebhookData
-    public WebhookData VerifyWebhook(WebhookType body)
-    {
-        return _payOS.verifyPaymentWebhookData(body);
-    }
-
-    // Optional: cancel payment link
-    public async Task<PaymentLinkInformation> CancelPaymentLink(long orderCode, string? reason = null)
-    {
-        return await _payOS.cancelPaymentLink(orderCode, reason);
-    }
-
-    // Optional: check payment info
     public async Task<PaymentLinkInformation> GetPaymentLinkInformation(long orderCode)
     {
         return await _payOS.getPaymentLinkInformation(orderCode);

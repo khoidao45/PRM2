@@ -20,7 +20,7 @@ public class PaymentController : ControllerBase
         _bookingService = bookingService;
     }
 
-    // 1️⃣ Create payment
+    // 1️⃣ Create a new payment
     [HttpPost("create")]
     public async Task<IActionResult> CreatePayment([FromBody] PaymentRequest request)
     {
@@ -30,7 +30,7 @@ public class PaymentController : ControllerBase
 
         var existingPayment = await _context.Payments.FirstOrDefaultAsync(p => p.BookingId == booking.Id);
         if (existingPayment != null)
-            return BadRequest("Payment already created");
+            return BadRequest("Payment already created for this booking");
 
         var payment = new Payment
         {
@@ -38,12 +38,11 @@ public class PaymentController : ControllerBase
             Amount = booking.TotalPrice,
             Status = "Pending"
         };
-
         _context.Payments.Add(payment);
         await _context.SaveChangesAsync();
 
-        var (checkoutUrl, qrCode, orderCode) = await _payOSService.GeneratePaymentLink(payment);
-
+        // Generate PayOS payment link
+        var (checkoutUrl, qrCode, orderCode) = await _payOSService.GeneratePaymentQR(payment);
         payment.OrderCode = orderCode;
         await _context.SaveChangesAsync();
 
@@ -54,43 +53,43 @@ public class PaymentController : ControllerBase
             payment.Amount,
             payment.Status,
             CheckoutUrl = checkoutUrl,
-            QrCode = qrCode
+            QrCode = qrCode,
+            OrderCode = orderCode
         });
     }
 
-    // 2️⃣ Webhook
-    [HttpPost("webhook")]
-    public async Task<IActionResult> Webhook([FromBody] WebhookType body)
+    // 2️⃣ Manual sync with PayOS (for local testing)
+    [HttpPost("sync/{bookingId}")]
+    public async Task<IActionResult> SyncPaymentStatus(int bookingId)
     {
-        try
+        var payment = await _context.Payments.FirstOrDefaultAsync(p => p.BookingId == bookingId);
+        if (payment == null) return NotFound("Payment not found");
+
+        // Get latest payment info from PayOS
+        var info = await _payOSService.GetPaymentLinkInformation(payment.OrderCode);
+
+        if (info.status == "PAID" && payment.Status != "Success")
         {
-            var webhookData = _payOSService.VerifyWebhook(body);
-            if (webhookData == null)
-                return BadRequest("Webhook verification failed");
+            payment.Status = "Success";
+            payment.TransactionId = info.transactions.FirstOrDefault()?.reference ?? "";
+            payment.UpdatedAt = DateTime.UtcNow;
+            await _context.SaveChangesAsync();
 
-            var payment = await _context.Payments.FirstOrDefaultAsync(p => p.OrderCode == webhookData.orderCode);
-            if (payment == null) return NotFound("Payment not found");
-
-            if (payment.Status != "Success")
-            {
-                payment.Status = "Success";
-                payment.TransactionId = webhookData.reference;
-                payment.UpdatedAt = DateTime.UtcNow;
-
-                await _context.SaveChangesAsync();
-                await _bookingService.UpdateBookingStatusAsync(payment.BookingId, "Paid");
-            }
-
-            return Ok(); // must return 200 to PayOS
+            // Update booking status
+            await _bookingService.UpdateBookingStatusAsync(payment.BookingId, "Paid");
         }
-        catch (Exception ex)
+
+        return Ok(new
         {
-            Console.WriteLine($"Webhook error: {ex}");
-            return BadRequest();
-        }
+            payment.BookingId,
+            payment.Status,
+            payment.TransactionId,
+            payment.UpdatedAt,
+            infoStatus = info.status
+        });
     }
 
-    // 3️⃣ Check status
+    // 3️⃣ Check local payment status
     [HttpGet("{bookingId}/status")]
     public async Task<IActionResult> GetPaymentStatus(int bookingId)
     {
@@ -107,7 +106,7 @@ public class PaymentController : ControllerBase
     }
 }
 
-// DTO
+// Request DTO
 public class PaymentRequest
 {
     public int BookingId { get; set; }

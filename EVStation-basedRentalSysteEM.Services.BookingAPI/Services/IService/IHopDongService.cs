@@ -1,7 +1,8 @@
-﻿using EVStation_basedRentalSysteEM.Services.BookingAPI.Models.Dto;
-using EVStation_basedRentalSystem.Services.BookingAPI.Models.DTO;
+﻿using EVStation_basedRentalSystem.Services.BookingAPI.Models.Dto;
+using System;
+using System.Threading.Tasks;
 
-namespace EVStation_basedRentalSystem.Services.BookingAPI.Services
+namespace EVStation_basedRentalSystem.Services.BookingAPI.Services.IService
 {
     public interface IHopDongService
     {

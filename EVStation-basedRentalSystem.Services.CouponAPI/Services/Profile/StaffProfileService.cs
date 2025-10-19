@@ -75,6 +75,25 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Services.Profile
             await _context.SaveChangesAsync();
             return staff;
         }
+        public async Task<bool> ApproveRenterAsync(string renterId)  // string Id từ RenterProfile
+        {
+            var renter = await _context.RenterProfiles
+                .FirstOrDefaultAsync(r => r.Id == renterId);
+
+            if (renter == null) return false;
+
+            renter.LicenseStatus = "Approved";
+            renter.UpdatedAt = DateTime.UtcNow;
+
+            _context.RenterProfiles.Update(renter);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        // -------------------------------
+        // Booking management
+        // -------------------------------
+       
 
         public async Task<StaffProfile?> AssignDepartmentAsync(string staffId, string department)
         {

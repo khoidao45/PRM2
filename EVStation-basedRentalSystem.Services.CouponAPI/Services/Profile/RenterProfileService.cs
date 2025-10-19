@@ -61,8 +61,10 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Services.Profile
             return true;
         }
 
+       
+
         // -------------------------------
-        // Role-Specific Actions
+        // Renter-specific actions
         // -------------------------------
         public async Task<RenterProfile?> UpdateDriverLicenseAsync(string renterId, string licenseNumber, string imageUrl)
         {
@@ -92,4 +94,4 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Services.Profile
             return renter;
         }
     }
-}
+    }

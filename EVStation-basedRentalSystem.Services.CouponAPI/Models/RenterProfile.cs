@@ -19,6 +19,8 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Models
         public string? IdentityCardNumber { get; set; }
         public string? IdentityCardImageUrl { get; set; }
 
+        public string LicenseStatus { get; set; } = "Pending";
+
         public string? Gender { get; set; }
         public DateTime? DateOfBirth { get; set; }
 

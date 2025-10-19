@@ -1,6 +1,7 @@
 ﻿using EVStation_basedRentalSysteEM.Services.BookingAPI.Services.IService;
 using EVStation_basedRentalSystem.Services.BookingAPI.Models.DTO;
 using EVStation_basedRentalSystem.Services.BookingAPI.Services;
+using EVStation_basedRentalSystem.Services.BookingAPI.Services.IService;
 
 namespace EVStation_basedRentalSysteEM.Services.BookingAPI.Services
 {
@@ -8,14 +9,14 @@ namespace EVStation_basedRentalSysteEM.Services.BookingAPI.Services
     {
         private readonly HttpClient _httpClient;
 
-        public HopDongService(IHttpClientFactory httpClientFactory)
+        public HopDongService(HttpClient httpClient)  // <== HttpClient trực tiếp
         {
-            _httpClient = httpClientFactory.CreateClient();
+            _httpClient = httpClient;
         }
 
         public async Task<Guid> TaoHopDongAsync(TaoHopDongDto request)
         {
-            var response = await _httpClient.PostAsJsonAsync("https://localhost:7063/api/hopdong/tao-hop-dong", request);
+            var response = await _httpClient.PostAsJsonAsync("api/hopdong/tao-hop-dong", request);
             response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadFromJsonAsync<dynamic>();
             return Guid.Parse(result.HopDongId.ToString());
@@ -23,19 +24,14 @@ namespace EVStation_basedRentalSysteEM.Services.BookingAPI.Services
 
         public async Task GuiEmailXacNhanAsync(Guid hopDongId, string email)
         {
-            var response = await _httpClient.PostAsJsonAsync(
-                $"https://localhost:7063/api/hopdong/{hopDongId}/gui-xac-nhan",
-                new { Email = email }
-            );
+            var emailRequest = new { Email = email };
+            var response = await _httpClient.PostAsJsonAsync($"api/hopdong/{hopDongId}/gui-xac-nhan", emailRequest);
             response.EnsureSuccessStatusCode();
         }
 
         public async Task XacNhanHopDongAsync(string token)
         {
-            var response = await _httpClient.PostAsJsonAsync(
-                "https://localhost:7063/api/hopdong/xac-nhan",
-                new { Token = token }
-            );
+            var response = await _httpClient.PostAsJsonAsync("api/hopdong/xac-nhan", new { Token = token });
             response.EnsureSuccessStatusCode();
         }
 

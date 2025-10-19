@@ -3,6 +3,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using EVStation_basedRentalSysteEM.Services.BookingAPI.Services.IService;
 using EVStation_basedRentalSysteEM.Services.BookingAPI.Models.Dto;
+using EVStation_basedRentalSystem.Services.BookingAPI.Models.Dto;
 
 namespace EVStation_basedRentalSystem.Services.BookingAPI.Services
 {
@@ -21,7 +22,7 @@ namespace EVStation_basedRentalSystem.Services.BookingAPI.Services
         {
             try
             {
-                var response = await _httpClient.GetFromJsonAsync<CarDto>($"api/cars/{carId}");
+                var response = await _httpClient.GetFromJsonAsync<CarDto>($"api/Car/{carId}");
                 return response;
             }
             catch (Exception ex)

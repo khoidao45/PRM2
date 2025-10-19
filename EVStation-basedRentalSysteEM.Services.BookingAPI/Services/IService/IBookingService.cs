@@ -7,10 +7,11 @@ namespace EVStation_basedRentalSystem.Services.BookingAPI.Services.IService
 {
     public interface IBookingService
     {
-        Task<IEnumerable<Booking?>> GetAllBookingsAsync();
+        Task<IEnumerable<Booking>> GetAllBookingsAsync();
         Task<Booking?> GetBookingByIdAsync(int id);
         Task<Booking> CreateBookingAsync(BookingDTO bookingDto);
-        Task<bool> CancelBookingAsync(int id);
         Task<Booking?> UpdateBookingStatusAsync(int id, string newStatus);
+        Task<bool> CancelBookingAsync(int id);
+        Task<Booking?> ConfirmBookingHopDongAsync(string token);
     }
 }

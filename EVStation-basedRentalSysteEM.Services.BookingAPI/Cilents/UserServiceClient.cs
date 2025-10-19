@@ -2,6 +2,7 @@
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using EVStation_basedRentalSysteEM.Services.BookingAPI.Models.Dto;
+using EVStation_basedRentalSystem.Services.BookingAPI.Models.Dto;
 
 namespace EVStation_basedRentalSystem.Services.BookingAPI.Clients
 {

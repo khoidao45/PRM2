@@ -23,7 +23,8 @@ builder.Services.AddHttpClient<IUserService, UserService>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:7001/"); // UserAPI URL
 });
-builder.Services.AddHttpClient<IHopDongService, HopDongService>(c => c.BaseAddress = new Uri("https://localhost:7063/"));
+builder.Services.AddHttpClient<IHopDongService, HopDongService>(cilent =>
+    cilent.BaseAddress = new Uri("https://localhost:7063/"));
 
 // 4️⃣ AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

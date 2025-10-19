@@ -11,11 +11,13 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Services
     {
         private readonly UserDbContext _context;
         private readonly IWebHostEnvironment _env;
+        private readonly UserDbContext _db;
 
-        public UserService(UserDbContext context, IWebHostEnvironment env)
+        public UserService(UserDbContext context, IWebHostEnvironment env, UserDbContext db)
         {
             _context = context;
             _env = env;
+            _db = db;
         }
 
         public async Task<IEnumerable<User>> GetAllAsync()
@@ -140,12 +142,93 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Services
                     Id = userDto.ID,
                     Username = userDto.Name,
                     Email = userDto.Email,
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = DateTime.UtcNow,
+                    Role = userDto.Role,
                 };
                 _context.Users.Add(newUser);
             }
 
             await _context.SaveChangesAsync();
         }
+        public async Task<string> UpdateUserRoleAsync(string userId, string role)
+        {
+            // Ensure the User row exists
+            var user = await _db.Users.FindAsync(userId);
+            if (user == null)
+            {
+                // create minimal user record so userId exists in UserAPI
+                user = new User
+                {
+                    Id = userId,
+                    Username = userId, // or any placeholder - you might populate better from payload if sent
+                    Email = null,
+                    Role = role,
+                    CreatedAt = DateTime.UtcNow,
+                    IsActive = true
+                };
+                _db.Users.Add(user);
+            }
+            else
+            {
+                user.Role = role;
+                _db.Users.Update(user);
+            }
+
+            // Remove user from all role-specific tables first
+            var existingRenter = await _db.Renters.FindAsync(userId);
+            if (existingRenter != null) _db.Renters.Remove(existingRenter);
+
+            var existingStaff = await _db.Staffs.FindAsync(userId);
+            if (existingStaff != null) _db.Staffs.Remove(existingStaff);
+
+            var existingAdmin = await _db.Admins.FindAsync(userId);
+            if (existingAdmin != null) _db.Admins.Remove(existingAdmin);
+
+            // Add to the correct role table
+            switch (role)
+            {
+                case "Renter":
+                    _db.Renters.Add(new Renter
+                    {
+                        Id = userId,
+                        FullName = user.Username,
+                        PhoneNumber = "", // optional, update later
+                        CreatedAt = DateTime.UtcNow,
+                        IsActive = true
+                    });
+                    break;
+
+                case "Staff":
+                    _db.Staffs.Add(new Staff
+                    {
+                        Id = userId,
+                        FullName = user.Username,
+                        Email = user.Email,
+                        PhoneNumber = "",
+                        CreatedAt = DateTime.UtcNow,
+                        IsActive = true
+                    });
+                    break;
+
+                case "Admin":
+                    _db.Admins.Add(new Admin
+                    {
+                        Id = userId,
+                        FullName = user.Username,
+                        ContactNumber = "",
+                        RoleLevel = "SystemAdmin",
+                        CreatedAt = DateTime.UtcNow
+                    });
+                    break;
+
+                default:
+                    // Role "Guest" or unknown — keep only User row, no role-specific table
+                    break;
+            }
+
+            await _db.SaveChangesAsync();
+            return $"User {userId} role updated to {role}.";
+        }
+
     }
 }

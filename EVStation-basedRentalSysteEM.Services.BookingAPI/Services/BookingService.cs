@@ -1,26 +1,63 @@
-﻿using EVStation_basedRentalSysteEM.Services.BookingAPI.Models.Dto;
-using EVStation_basedRentalSystem.Services.BookingAPI.Data;
+﻿using EVStation_basedRentalSystem.Services.BookingAPI.Data;
 using EVStation_basedRentalSystem.Services.BookingAPI.Models;
 using EVStation_basedRentalSystem.Services.BookingAPI.Models.DTO;
 using EVStation_basedRentalSystem.Services.BookingAPI.Services.IService;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Net.Http;
 using System.Net.Http.Json;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using EVStation_basedRentalSysteEM.Services.BookingAPI.Services.IService;
+using EVStation_basedRentalSysteEM.Services.BookingAPI.Models.Dto;
 
 namespace EVStation_basedRentalSystem.Services.BookingAPI.Services
 {
+    // ----------------------------
+    // Booking Service
+    // ----------------------------
     public class BookingService : IBookingService
     {
         private readonly BookingDbContext _context;
-        private readonly HttpClient _httpClient;
+        private readonly IHopDongService _hopDongService;
+        private readonly IUserService _userService;
+        private readonly ICarService _carService;
 
-        public BookingService(BookingDbContext context, IHttpClientFactory httpClientFactory)
+        public BookingService(
+            BookingDbContext context,
+            IHopDongService hopDongService,
+            IUserService userService,
+            ICarService carService)
         {
             _context = context;
-            _httpClient = httpClientFactory.CreateClient();
+            _hopDongService = hopDongService;
+            _userService = userService;
+            _carService = carService;
         }
 
         // ----------------------------
-        // 1️⃣ Get All Bookings
+        // 1️⃣ Map BookingDTO -> HopDongDTO
+        // ----------------------------
+        private TaoHopDongDto MapToHopDongDto(BookingDTO bookingDto, UserDto user, CarDto car, decimal totalPrice)
+        {
+            return new TaoHopDongDto(
+                SoHopDong: $"HD-{Guid.NewGuid().ToString().Substring(0, 8)}",
+                NgayKy: DateTime.UtcNow.Day.ToString(),
+                ThangKy: DateTime.UtcNow.Month.ToString(),
+                NamKy: DateTime.UtcNow.Year.ToString(),
+                BenA: new ThongTinBenA(user.FullName, "", "", ""),
+                Xe: new ThongTinXe(car.Brand, car.LicensePlate, car.Model, "", "", ""),
+                GiaThue: new ThongTinGiaThue(totalPrice.ToString(), "", "Tiền mặt", DateTime.UtcNow.ToString("dd/MM/yyyy")),
+                ThoiHanThueSo: (bookingDto.EndDate - bookingDto.StartDate).Days.ToString(),
+                ThoiHanThueChu: "",
+                ThoiHanThue: (bookingDto.EndDate - bookingDto.StartDate).Days,
+                DonViThoiHan: "ngay",
+                GPLX: new ThongTinGPLX("", "", "")
+            );
+        }
+
+        // ----------------------------
+        // 2️⃣ Get all bookings
         // ----------------------------
         public async Task<IEnumerable<Booking>> GetAllBookingsAsync()
         {
@@ -28,7 +65,7 @@ namespace EVStation_basedRentalSystem.Services.BookingAPI.Services
         }
 
         // ----------------------------
-        // 2️⃣ Get Booking by Id
+        // 3️⃣ Get booking by Id
         // ----------------------------
         public async Task<Booking?> GetBookingByIdAsync(int id)
         {
@@ -36,50 +73,35 @@ namespace EVStation_basedRentalSystem.Services.BookingAPI.Services
         }
 
         // ----------------------------
-        // 3️⃣ Create Booking
+        // 4️⃣ Create Booking + HopDong
         // ----------------------------
         public async Task<Booking> CreateBookingAsync(BookingDTO bookingDto)
         {
-            // -----------------------
-            // 1️⃣ Validate User via AuthAPI
-            // -----------------------
-            var userResponse = await _httpClient.GetAsync($"https://localhost:7001/api/auth/{bookingDto.UserId}");
-            if (!userResponse.IsSuccessStatusCode)
-                throw new Exception($"User with ID {bookingDto.UserId} not found in AuthAPI");
+            var user = await _userService.GetUserByIdAsync(bookingDto.UserId);
+            if (user == null) throw new Exception("User not found");
 
-            var user = await userResponse.Content.ReadFromJsonAsync<UserDto>();
-            if (user == null)
-                throw new Exception($"User with ID {bookingDto.UserId} not found.");
+            var car = await _carService.GetCarByIdAsync(bookingDto.CarId);
+            if (car == null) throw new Exception("Car not found");
 
-            // -----------------------
-            // 2️⃣ Validate Car via CarAPI
-            // -----------------------
-            var carResponse = await _httpClient.GetAsync($"https://localhost:7003/api/car/{bookingDto.CarId}");
-            if (!carResponse.IsSuccessStatusCode)
-                throw new Exception($"Car with ID {bookingDto.CarId} not found in CarAPI");
-
-            var car = await carResponse.Content.ReadFromJsonAsync<CarDTO>();
-            if (car == null)
-                throw new Exception($"Car with ID {bookingDto.CarId} not found.");
-
-            // -----------------------
-            // 3️⃣ Validate Dates
-            // -----------------------
             double hours = (bookingDto.EndDate - bookingDto.StartDate).TotalHours;
-            if (hours <= 0)
-                throw new Exception("EndDate must be after StartDate");
+            if (hours <= 0) throw new Exception("EndDate must be after StartDate");
 
             decimal totalPrice = Math.Round((decimal)hours * car.HourlyRate, 2);
 
-            // -----------------------
-            // 4️⃣ Create Booking
-            // -----------------------
+            var hopDongDto = MapToHopDongDto(bookingDto, user, car, totalPrice);
+
+            // --------------- Gọi HopDong Service ---------------
+            var hopDongId = await _hopDongService.TaoHopDongAsync(hopDongDto);
+
+            await _hopDongService.GuiEmailXacNhanAsync(hopDongId, user.Email);
+
+            // --------------- Tạo booking trong DB ---------------
             var booking = new Booking
             {
                 UserId = bookingDto.UserId,
                 CarId = bookingDto.CarId,
                 StationId = car.StationId,
-                ContractId = 0,
+                HopDongId = hopDongId,
                 StartTime = bookingDto.StartDate,
                 EndTime = bookingDto.EndDate,
                 TotalPrice = totalPrice,
@@ -92,6 +114,30 @@ namespace EVStation_basedRentalSystem.Services.BookingAPI.Services
 
             return booking;
         }
+
+        // ----------------------------
+        // 5️⃣ Confirm Booking sau khi HopDong được xác nhận
+        // ----------------------------
+        public async Task<Booking?> ConfirmBookingHopDongAsync(string token)
+        {
+            await _hopDongService.XacNhanHopDongAsync(token);
+
+            var hopDongId = await _hopDongService.GetHopDongIdByTokenAsync(token);
+
+            var booking = await _context.Bookings.FirstOrDefaultAsync(b => b.HopDongId == hopDongId);
+            if (booking != null)
+            {
+                booking.Status = "Confirmed";
+                booking.UpdatedAt = DateTime.UtcNow;
+                await _context.SaveChangesAsync();
+            }
+
+            return booking;
+        }
+
+        // ----------------------------
+        // 6️⃣ Update status
+        // ----------------------------
         public async Task<Booking?> UpdateBookingStatusAsync(int id, string newStatus)
         {
             var booking = await _context.Bookings.FirstOrDefaultAsync(b => b.Id == id);
@@ -105,7 +151,7 @@ namespace EVStation_basedRentalSystem.Services.BookingAPI.Services
         }
 
         // ----------------------------
-        // 5️⃣ Cancel Booking
+        // 7️⃣ Cancel booking
         // ----------------------------
         public async Task<bool> CancelBookingAsync(int id)
         {
@@ -120,13 +166,25 @@ namespace EVStation_basedRentalSystem.Services.BookingAPI.Services
     }
 
     // ----------------------------
-    // DTO for CarAPI
+    // DTO HopDong và sub-DTO gói gọn bên trong BookingAPI
     // ----------------------------
-    public class CarDTO
-    {
-        public int Id { get; set; }
-        public string Model { get; set; } = "";
-        public decimal HourlyRate { get; set; }
-        public int StationId { get; set; }
-    }
+    public record TaoHopDongDto(
+        string SoHopDong,
+        string NgayKy,
+        string ThangKy,
+        string NamKy,
+        ThongTinBenA BenA,
+        ThongTinXe Xe,
+        ThongTinGiaThue GiaThue,
+        string ThoiHanThueSo,
+        string ThoiHanThueChu,
+        int ThoiHanThue,
+        string DonViThoiHan,
+        ThongTinGPLX GPLX
+    );
+
+    public record ThongTinBenA(string HoTen, string NamSinh, string CccdHoacHoChieu, string HoKhauThuongTru);
+    public record ThongTinXe(string NhanHieu, string BienSo, string LoaiXe, string MauSon, string ChoNgoi, string XeDangKiHan);
+    public record ThongTinGiaThue(string GiaThueSo, string GiaThueChu, string PhuongThucThanhToan, string NgayThanhToan);
+    public record ThongTinGPLX(string Hang, string So, string HanSuDung);
 }

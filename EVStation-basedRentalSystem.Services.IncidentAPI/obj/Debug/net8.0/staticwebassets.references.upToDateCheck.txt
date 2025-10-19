@@ -1,1 +1,6 @@
-C:\Users\HP\Desktop\hochoi\EV-RENTAL\EVStation-basedRentalSystem.Services.CouponAPI\obj\Debug\net8.0\staticwebassets.build.json
+E:\FPTU\s5\SWP391\swp.new\branch-of-mine\SWP391--EV-Station-Based-Rental-System\EVStation-basedRentalSystem.Services.CouponAPI\obj\Debug\net8.0\staticwebassets.build.json
+E:\FPTU\s5\SWP391\swp.new\branch-of-mine\SWP391--EV-Station-Based-Rental-System\EVStation-basedRentalSystem.Services.CouponAPI\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\MINH KHOI\source\repos\ancomga\PRM\EVStation-basedRentalSystem.Services.CouponAPI\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\MINH KHOI\source\repos\ancomga\PRM\EVStation-basedRentalSystem.Services.CouponAPI\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\MINH KHOI\source\repos\ancomga\PRM\EVStation-basedRentalSystem.Services.CouponAPI\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\MINH KHOI\source\repos\ancomga\PRM\EVStation-basedRentalSystem.Services.CouponAPI\obj\Debug\net8.0\staticwebassets.build.json

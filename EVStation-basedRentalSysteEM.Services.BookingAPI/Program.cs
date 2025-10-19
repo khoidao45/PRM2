@@ -1,4 +1,5 @@
-﻿using EVStation_basedRentalSysteEM.Services.BookingAPI.Services.IService;
+﻿using EVStation_basedRentalSysteEM.Services.BookingAPI.Services;
+using EVStation_basedRentalSysteEM.Services.BookingAPI.Services.IService;
 using EVStation_basedRentalSystem.Services.BookingAPI.Data;
 using EVStation_basedRentalSystem.Services.BookingAPI.Services;
 using EVStation_basedRentalSystem.Services.BookingAPI.Services.IService;
@@ -22,6 +23,7 @@ builder.Services.AddHttpClient<IUserService, UserService>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:7001/"); // UserAPI URL
 });
+builder.Services.AddHttpClient<IHopDongService, HopDongService>(c => c.BaseAddress = new Uri("https://localhost:7063/"));
 
 // 4️⃣ AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

@@ -172,7 +172,7 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Migrations
                     b.ToTable("Staffs");
                 });
 
-            modelBuilder.Entity("EVStation_basedRentalSystem.Services.UserAPI.Models.User", b =>
+            modelBuilder.Entity("User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -190,6 +190,10 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Migrations
                     b.Property<string>("ProfileImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -204,7 +208,7 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Migrations
 
             modelBuilder.Entity("EVStation_basedRentalSystem.Services.UserAPI.Models.Admin", b =>
                 {
-                    b.HasOne("EVStation_basedRentalSystem.Services.UserAPI.Models.User", "User")
+                    b.HasOne("User", "User")
                         .WithOne("Admin")
                         .HasForeignKey("EVStation_basedRentalSystem.Services.UserAPI.Models.Admin", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -215,7 +219,7 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Migrations
 
             modelBuilder.Entity("EVStation_basedRentalSystem.Services.UserAPI.Models.Renter", b =>
                 {
-                    b.HasOne("EVStation_basedRentalSystem.Services.UserAPI.Models.User", "User")
+                    b.HasOne("User", "User")
                         .WithOne("Renter")
                         .HasForeignKey("EVStation_basedRentalSystem.Services.UserAPI.Models.Renter", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -226,7 +230,7 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Migrations
 
             modelBuilder.Entity("EVStation_basedRentalSystem.Services.UserAPI.Models.Staff", b =>
                 {
-                    b.HasOne("EVStation_basedRentalSystem.Services.UserAPI.Models.User", "User")
+                    b.HasOne("User", "User")
                         .WithOne("Staff")
                         .HasForeignKey("EVStation_basedRentalSystem.Services.UserAPI.Models.Staff", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -235,7 +239,7 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("EVStation_basedRentalSystem.Services.UserAPI.Models.User", b =>
+            modelBuilder.Entity("User", b =>
                 {
                     b.Navigation("Admin")
                         .IsRequired();

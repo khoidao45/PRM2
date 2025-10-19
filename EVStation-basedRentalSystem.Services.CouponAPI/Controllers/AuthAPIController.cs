@@ -16,7 +16,6 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Controllers
         private readonly IAuthenticationService _authService;
         private readonly IRegistrationService _registrationService;
         private readonly IUserManagementService _userManagementService;
-       
         private readonly IAuthorizeService _authorizeService;
 
         public AuthController(
@@ -62,6 +61,16 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Controllers
         public async Task<IActionResult> Register([FromBody] RegistrationRequestDto request)
         {
             var result = await _registrationService.RegisterUserAsync(request);
+            if (result.User == null) return BadRequest(result.Message);
+            return Ok(result);
+        }
+
+        [HttpGet("confirm-email")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmEmail([FromQuery] string userId, [FromQuery] string token)
+        {
+            var result = await _registrationService.ConfirmEmailAsync(userId, token);
+            if (result.Contains("failed")) return BadRequest(result);
             return Ok(result);
         }
 
@@ -70,6 +79,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Controllers
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequestDto request)
         {
             var result = await _registrationService.ForgotPasswordAsync(request.Email);
+            if (result.Contains("not found")) return NotFound(result);
             return Ok(result);
         }
 
@@ -77,8 +87,8 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequestDto request)
         {
-            var result = await _registrationService.ResetPasswordAsync(request.NewPassword.ToLower());
-
+            var result = await _registrationService.ResetPasswordAsync(request.Email, request.Token, request.NewPassword);
+            if (result.Contains("failed")) return BadRequest(result);
             return Ok(result);
         }
 
@@ -87,6 +97,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Controllers
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequestDto request)
         {
             var result = await _registrationService.ChangePasswordAsync(request);
+            if (result.Contains("failed") || result.Contains("not found")) return BadRequest(result);
             return Ok(result);
         }
 
@@ -100,12 +111,12 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Controllers
             return Ok(new { UserId = userId, Email = email });
         }
 
-
         [HttpGet("{id}")]
         //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetUserById(string id)
         {
             var user = await _userManagementService.FindByIdAsync(id);
+            if (user == null) return NotFound();
             return Ok(user);
         }
 

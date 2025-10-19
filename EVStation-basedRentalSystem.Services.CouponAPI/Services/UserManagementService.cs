@@ -3,7 +3,6 @@ using EVStation_basedRentalSystem.Services.AuthAPI.Models.Dto;
 using EVStation_basedRentalSystem.Services.AuthAPI.Service.IService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -38,7 +37,6 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
 
             return result;
         }
-
 
         public async Task<UserDto> FindByIdAsync(string accountId)
         {
@@ -80,9 +78,11 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
                 Email = user.Email,
                 Name = user.Name,
                 PhoneNumber = user.PhoneNumber,
-                Role = roles.FirstOrDefault() // or string.Join(", ", roles) if multiple
+                Role = user.Role ?? roles.FirstOrDefault() ?? string.Empty,
+                ProfileImageUrl = user.ProfileImageUrl,
+                IsActive = user.IsActive,
+                CreatedAt = user.CreatedAt
             };
         }
-
     }
 }

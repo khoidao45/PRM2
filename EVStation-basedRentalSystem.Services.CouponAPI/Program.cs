@@ -4,6 +4,10 @@ using EVStation_basedRentalSystem.Services.AuthAPI.Models;
 using EVStation_basedRentalSystem.Services.AuthAPI.Service;
 using EVStation_basedRentalSystem.Services.AuthAPI.Service.IService;
 using EVStation_basedRentalSystem.Services.AuthAPI.Services.IService;
+using EVStation_basedRentalSystem.Services.AuthAPI.Services.IService.Profile;
+using EVStation_basedRentalSystem.Services.AuthAPI.Services.Profile;
+using EVStation_basedRentalSystem.Services.UserAPI.Services.IService;
+using EVStation_basedRentalSystem.Services.UserAPI.Services.Profile;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -17,9 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 // 1️⃣ Configure DbContext
 // ----------------------------
 builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // ----------------------------
 // 2️⃣ Configure Identity
@@ -31,9 +33,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 // ----------------------------
 // 3️⃣ Configure JWT Authentication
 // ----------------------------
-builder.Services.Configure<JwtOptions>(
-    builder.Configuration.GetSection("JwtOptions")
-);
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JwtOptions"));
 
 var jwtOptions = builder.Configuration.GetSection("JwtOptions").Get<JwtOptions>();
 var key = Encoding.UTF8.GetBytes(jwtOptions.Secret);
@@ -58,20 +58,25 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
 // ----------------------------
-// 4️⃣ Add services
+// 4️⃣ Register Services (DI)
 // ----------------------------
-builder.Services.AddControllers();
-
+// Auth & JWT
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<EmailService>();
 builder.Services.AddScoped<IRegistrationService, RegistrationService>();
 builder.Services.AddScoped<ITokenIntrospectionService, TokenIntrospectionService>();
 builder.Services.AddScoped<IUserManagementService, UserManagementService>();
 builder.Services.AddScoped<IAuthorizeService, AuthorizeService>();
 
-// ✅ Properly register UserServiceClient with base URL
+// Profiles
+builder.Services.AddScoped<IAdminProfileService, AdminProfileService>();
+builder.Services.AddScoped<IStaffProfileService, StaffProfileService>();
+builder.Services.AddScoped<IRenterProfileService, RenterProfileService>();
+
+
+// HTTP client for user service if needed
 builder.Services.AddHttpClient<UserServiceClient>((serviceProvider, client) =>
 {
     var config = serviceProvider.GetRequiredService<IConfiguration>();
@@ -80,8 +85,9 @@ builder.Services.AddHttpClient<UserServiceClient>((serviceProvider, client) =>
 });
 
 // ----------------------------
-// 5️⃣ Configure Swagger with Bearer
+// 5️⃣ Configure Controllers & Swagger
 // ----------------------------
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -115,6 +121,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+
 // ----------------------------
 // 6️⃣ Apply migrations & seed roles
 // ----------------------------
@@ -131,16 +138,15 @@ using (var scope = app.Services.CreateScope())
 }
 
 // ----------------------------
-// 7️⃣ Configure middleware
+// 7️⃣ Configure Middleware
 // ----------------------------
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AuthAPI v1"));
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
 app.UseAuthorization();
 

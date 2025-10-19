@@ -83,6 +83,15 @@ namespace EVStation_basedRentalSystem.Services.UserAPI.Controllers
 
             return Ok(user);
         }
+        [HttpPost("sync-role")]
+        public async Task<IActionResult> SyncRole([FromBody] SyncRoleDto request)
+        {
+            if (request == null || string.IsNullOrEmpty(request.UserId))
+                return BadRequest("Invalid payload");
+
+            var result = await _userService.UpdateUserRoleAsync(request.UserId, request.Role);
+            return Ok(new { Message = result });
+        }
 
     }
 }

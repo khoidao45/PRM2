@@ -29,10 +29,14 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
         public async Task<LoginResponseDto> AuthenticateAsync(LoginRequestDto loginRequest, HttpResponse response)
         {
             var user = await _userManager.FindByNameAsync(loginRequest.Username.ToLower());
-            if (user == null || !await _userManager.CheckPasswordAsync(user, loginRequest.Password))
-            {
+            if (user == null)
                 return new LoginResponseDto { User = null, Token = "" };
-            }
+
+            if (!user.IsActive)
+                return new LoginResponseDto { User = null, Token = "" };
+
+            if (!await _userManager.CheckPasswordAsync(user, loginRequest.Password))
+                return new LoginResponseDto { User = null, Token = "" };
 
             var roles = await _userManager.GetRolesAsync(user);
 
@@ -42,6 +46,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
             // Persist refresh token in DB
             user.RefreshToken = refreshToken;
             user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+            user.UpdatedAt = DateTime.UtcNow;
             await _userManager.UpdateAsync(user);
 
             var userDto = new UserDto
@@ -50,7 +55,10 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
                 ID = user.Id,
                 Name = user.Name,
                 PhoneNumber = user.PhoneNumber,
-                Role = roles.FirstOrDefault()
+                Role = roles.FirstOrDefault() ?? user.Role,
+                ProfileImageUrl = user.ProfileImageUrl,
+                IsActive = user.IsActive,
+                CreatedAt = user.CreatedAt
             };
 
             return new LoginResponseDto
@@ -80,6 +88,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
 
             user.RefreshToken = newRefreshToken;
             user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+            user.UpdatedAt = DateTime.UtcNow;
 
             var result = await _userManager.UpdateAsync(user);
             if (!result.Succeeded)
@@ -105,6 +114,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
             {
                 user.RefreshToken = null;
                 user.RefreshTokenExpiry = null;
+                user.UpdatedAt = DateTime.UtcNow;
                 var result = await _userManager.UpdateAsync(user);
                 if (!result.Succeeded)
                 {
@@ -115,5 +125,5 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
             response.Headers.Remove("Authorization");
             return "Logged out successfully";
         }
-        }
     }
+}

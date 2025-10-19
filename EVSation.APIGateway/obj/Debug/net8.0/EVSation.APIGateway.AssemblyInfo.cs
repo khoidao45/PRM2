@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EVSation.APIGateway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+253a65b7ae583105a5db43d03dd8d0401dd6517a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bfca8339a2138513ca29f68ba362e516e59c2e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("EVSation.APIGateway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EVSation.APIGateway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

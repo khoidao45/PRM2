@@ -18,9 +18,6 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
             _jwtOptions = jwtOptions.Value;
         }
 
-        /// <summary>
-        /// Generate JWT access token with user roles
-        /// </summary>
         public string GenerateAccessToken(ApplicationUser user, IList<string> roles)
         {
             var claims = new List<Claim>
@@ -28,7 +25,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Email, user.Email ?? string.Empty),
                 new Claim(ClaimTypes.Name, user.Name ?? string.Empty),
-                new Claim("IsApproved", user.IsApproved.ToString())
+                new Claim("IsActive", user.IsActive.ToString())
             };
 
             // Add role claims
@@ -48,18 +45,12 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        /// <summary>
-        /// Generate secure random refresh token
-        /// </summary>
         public string GenerateRefreshToken()
         {
             var randomBytes = RandomNumberGenerator.GetBytes(64);
             return Convert.ToBase64String(randomBytes);
         }
 
-        /// <summary>
-        /// Extract claims from expired token (for refresh scenarios)
-        /// </summary>
         public ClaimsPrincipal? GetPrincipalFromExpiredToken(string token)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -71,7 +62,7 @@ namespace EVStation_basedRentalSystem.Services.AuthAPI.Service
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuer = false,
                 ValidateAudience = false,
-                ValidateLifetime = false // allow expired token for refresh
+                ValidateLifetime = false
             }, out _);
 
             return principal;

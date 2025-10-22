@@ -9,7 +9,7 @@ public class BookingService : IBookingService
     public BookingService(HttpClient httpClient, IConfiguration config)
     {
         _httpClient = httpClient;
-        _baseUrl = config["BookingApi:BaseUrl"] ?? "https://localhost:7226/api/booking";
+        _baseUrl = config["BookingApi:BaseUrl"] ?? "https://localhost:7005/api/booking";
     }
 
     public async Task<BookingDto?> GetBookingByIdAsync(int bookingId)
